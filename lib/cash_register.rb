@@ -24,7 +24,7 @@ class CashRegister
       float_discount = 0.0
       float_discount = @discount.to_f / 100.0
       @total = @total - (@total * float_discount)
-      return "Success"
+      return "After the discount, the total comes to #{@total}."
     else
       return "There is no discount to apply."
     end
