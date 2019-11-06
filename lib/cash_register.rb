@@ -30,14 +30,14 @@ class CashRegister
     end
   end
   
-  def self.items
+  def items
     @@items
   end
   
   def void_last_transaction
     last_item = @item_prices.size - 1
     @total = @total - @item_prices[last_item]
-    self.items.pop
+    @@items.pop
     @item_prices.pop
     if @item_prices.size == 0 
       @total = 0.0 
