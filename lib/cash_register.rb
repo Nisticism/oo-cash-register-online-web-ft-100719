@@ -6,6 +6,7 @@ class CashRegister
   def initialize(total = 0, discount = 0)
     @total = total
     @item_prices = []
+    @discount = discount
     if discount != 0
       apply_discount
     end
@@ -24,7 +25,7 @@ class CashRegister
   
   def apply_discount
     if @discount != 0
-      discount = discount / 100
+      @discount = @discount / 100
       @total = @total - (@total * discount)
       return "Success"
     else
