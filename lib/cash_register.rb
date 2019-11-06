@@ -24,8 +24,9 @@ class CashRegister
   
   def apply_discount
     if @discount != 0
-      @discount = @discount / 100
-      @total = @total - (@total * discount)
+      float_discount = 0.0
+      float_discount = @discount.to_f / 100.0
+      @total = @total - (@total * float_discount)
       return "Success"
     else
       return "There is no discount to apply."
