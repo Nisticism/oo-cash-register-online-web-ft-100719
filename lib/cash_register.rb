@@ -2,7 +2,7 @@ class CashRegister
   
   attr_accessor :total, :discount, :item_prices, :items
   
-  def initialize(total = 0, discount = 0)
+  def initialize(total = 0, discount = nil)
     @total = total
     @item_prices = []
     @items = []
@@ -24,7 +24,7 @@ class CashRegister
   end
   
   def apply_discount
-    if @discount == 0 
+    if @discount == nil 
       return "There is no discount to apply."
     else 
       float_discount = self.discount.to_f / 100.0
