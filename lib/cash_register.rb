@@ -1,12 +1,13 @@
 class CashRegister 
   
   @@items = []
-  attr_accessor :total
+  attr_accessor :total, :discount, :item_prices
   
   def initialize(total = 0, discount = 0)
     @total = total
-    if discount != nil 
-      @total -= discount
+    @item_prices = []
+    if discount != 0
+      apply_discount
     end
     
   end
@@ -16,13 +17,15 @@ class CashRegister
   end
   
   def add_item(title, price, quantity = 1)
+    @item_prices << price
     @total += price * quantity
     @@items << title
   end
   
   def apply_discount
-    if @discount != nil 
-      @total -= @discount
+    if @discount != 0
+      discount = discount / 100
+      @total = @total - (@total * discount)
       return "Success"
     else
       return "There is no discount to apply."
