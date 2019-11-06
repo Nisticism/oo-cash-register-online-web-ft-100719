@@ -7,9 +7,6 @@ class CashRegister
     @total = total
     @item_prices = []
     @discount = discount
-    if @discount != 0
-      apply_discount
-    end
   end
   
   def total
