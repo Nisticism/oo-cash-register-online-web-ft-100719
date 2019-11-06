@@ -29,7 +29,8 @@ class CashRegister
     else 
       float_discount = self.discount.to_f / 100.0
       @total = self.total - (self.total * float_discount)
-      return "After the discount, the total comes to #{self.total}."
+      @total = self.total.to_i
+      return "After the discount, the total comes to #{@total}."
     end
   end
   
