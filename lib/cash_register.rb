@@ -42,6 +42,9 @@ class CashRegister
     end
     @@items.pop
     @item_prices.pop
+    if @item_prices.size == 0 
+      @total = 0.0 
+    end
   end
   
   
