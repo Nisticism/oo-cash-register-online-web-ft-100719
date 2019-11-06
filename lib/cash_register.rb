@@ -28,7 +28,7 @@ class CashRegister
       return "There is no discount to apply."
     else 
       float_discount = self.discount.to_f / 100.0
-      self.total = self.total - (self.total * float_discount)
+      @total = self.total - (self.total * float_discount)
       return "After the discount, the total comes to #{self.total}."
     end
   end
