@@ -1,11 +1,13 @@
 class CashRegister 
   
   @@items = []
-  attr_accessor :total, :discount
+  attr_accessor :total
   
   def initialize(total = 0, discount*)
-    @total = total 
-    @discount = discount
+    @total = total
+    if discount != nil 
+      @total -= discount
+    end
     
   end
   
